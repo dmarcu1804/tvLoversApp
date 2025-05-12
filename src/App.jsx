@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 // import viteLogo from '/vite.svg'
 // import './App.css'
 import axios from "axios";
-import { topBar, mainSection, mainContent, bottomContent } from './elements.module.css'
+import { topBar, mainSection, mainContent, bottomContent, showsDisplayed, individualShowDisplayed } from './elements.module.css'
+import nullImage from './TVApp_Null.jpeg'
 
 //const axios = require('axios')
 
@@ -57,6 +58,19 @@ const App = () => {
             <button type="submit" onClick={handleSearch}>search</button>
           </form>
         </div>
+      </div>
+
+      <div className={showsDisplayed}>
+        {shows.map((show) => {
+          const imageURL = show.show.image?.medium ?? "Null"
+          console.log(imageURL)
+
+          return (
+            <div key={show.show.id} className={individualShowDisplayed}>
+              <h1>{show.show.name}</h1>
+              <img src={imageURL !== "Null" ? imageURL : nullImage} alt="pic" />
+            </div>
+        )})}
       </div>
 
       <div className={bottomContent}>

@@ -81,3 +81,22 @@ body{
     padding-top:20px;
     margin:0;
 }
+
+.showsDisplayed {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: dodgerblue;
+    padding: 10px;
+    width:80%;
+    gap: 30px;
+    margin: 0 auto; /* this centers the whole grid */
+}
+
+.individualShowDisplayed {
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    /* width:20%; */
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
