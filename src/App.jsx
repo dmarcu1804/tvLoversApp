@@ -60,22 +60,27 @@ const App = () => {
         </div>
       </div>
 
+      {/* this displays the Search Results for - if the shows array is populated, then it shows result for show */}
+      {
+        shows.length === 0 ? (<div className={bottomContent}><h1>Search results for ...</h1><p>Please enter your fave show above and hit 'search'</p></div>) 
+                           : (<div className={bottomContent}><h1>Search Results for <em>{showNameSearch}</em> </h1></div>)
+      }
+
+      {/* display shows in Grid format with 4 columns */}
       <div className={showsDisplayed}>
         {shows.map((show) => {
-          const imageURL = show.show.image?.medium ?? "Null"
-          console.log(imageURL)
+          const { id, name, image, genres } = show.show
+          const imageURL = image?.medium ?? "Null"
+          //console.log(imageURL)
+          const genreAvailable = genres.length
 
           return (
-            <div key={show.show.id} className={individualShowDisplayed}>
-              <h1>{show.show.name}</h1>
+            <div key={id} className={individualShowDisplayed}>
               <img src={imageURL !== "Null" ? imageURL : nullImage} alt="pic" />
+              <h5>{name}</h5>
+              {genreAvailable > 0 ? genres.map((genre, index) => <small>{genre}{index < genres.length-1 ? ', ' : ''}</small>) : ""}
             </div>
         )})}
-      </div>
-
-      <div className={bottomContent}>
-        <h1>Search results for ...</h1>
-        <p>Please enter your fave show above and hit 'search'</p>
       </div>
     </>
   );

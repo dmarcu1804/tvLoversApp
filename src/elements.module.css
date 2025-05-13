@@ -85,18 +85,32 @@ body{
 .showsDisplayed {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: dodgerblue;
-    padding: 10px;
+    /* background-color: dodgerblue; */
+    /* padding: 10px; */
     width:80%;
     gap: 30px;
-    margin: 0 auto; /* this centers the whole grid */
+    margin: 10px auto; /* this centers the whole grid */
 }
 
 .individualShowDisplayed {
-    background-color: #f1f1f1;
-    border: 1px solid black;
+    /* background-color: #f1f1f1; */
+    /* border: 1px solid black; */
     /* width:20%; */
     padding: 10px;
     font-size: 30px;
-    text-align: center;
-  }
+    text-align: left;
+}
+
+.individualShowDisplayed >h5 {
+    margin:0 auto;
+}
+
+.individualShowDisplayed >img {
+    max-height: 280px;
+}
+
+.individualShowDisplayed small {
+    /* margin:-40px; */
+    font-size:0.9rem;
+    color:rgb(116, 116, 116);
+}
