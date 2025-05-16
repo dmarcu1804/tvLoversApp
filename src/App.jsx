@@ -5,6 +5,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { topBar, mainSection, mainContent, bottomContent, showsDisplayed, individualShowDisplayed } from './elements.module.css'
 import nullImage from './TVApp_Null.jpeg'
+import DisplayProfiles from "./components/DisplayProfiles";
+import Home from "./components/Home"
+import { Routes, Route } from 'react-router-dom'
+import ShowDetail from "./components/ShowDetail";
 
 //const axios = require('axios')
 
@@ -46,42 +50,17 @@ const App = () => {
         <h1>TV Lovers</h1>
       </div>
 
-      <div className={mainSection}>
-        <div className="main-text">
-          <h1>For the TV obsessed!!!</h1>
-          <p>Find out everything about your favourite TV shows.</p>
-        </div>
+      <Routes>
+            <Route path="/" element={<Home handleInput = {handleInput} handleSearch={handleSearch} inputValue={inputValue} shows = {shows} showNameSearch = {showNameSearch}/>} />
+            <Route path="/shows/:id" element={<ShowDetail />} />
+      </Routes>
 
-        <div className={mainContent}>
-          <form>
-            <input value={inputValue} onChange={handleInput} placeholder="enter your fave show name"/>
-            <button type="submit" onClick={handleSearch}>search</button>
-          </form>
-        </div>
-      </div>
-
-      {/* this displays the Search Results for - if the shows array is populated, then it shows result for show */}
-      {
-        shows.length === 0 ? (<div className={bottomContent}><h1>Search results for ...</h1><p>Please enter your fave show above and hit 'search'</p></div>) 
-                           : (<div className={bottomContent}><h1>Search Results for <em>{showNameSearch}</em> </h1></div>)
-      }
-
+      {/* <Home handleInput = {handleInput} handleSearch={handleSearch} inputValue={inputValue} shows = {shows} showNameSearch = {showNameSearch}/> */}
+      
       {/* display shows in Grid format with 4 columns */}
-      <div className={showsDisplayed}>
-        {shows.map((show) => {
-          const { id, name, image, genres } = show.show
-          const imageURL = image?.medium ?? "Null"
-          //console.log(imageURL)
-          const genreAvailable = genres.length
-
-          return (
-            <div key={id} className={individualShowDisplayed}>
-              <img src={imageURL !== "Null" ? imageURL : nullImage} alt="pic" />
-              <h5>{name}</h5>
-              {genreAvailable > 0 ? genres.map((genre, index) => <small>{genre}{index < genres.length-1 ? ', ' : ''}</small>) : ""}
-            </div>
-        )})}
-      </div>
+      {/* <div className={showsDisplayed}>
+        <DisplayProfiles shows={shows} />
+      </div> */}
     </>
   );
 };
