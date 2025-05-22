@@ -49,9 +49,9 @@ const Home = ({
         </div>
       )}
 
-      <div className={showsDisplayed}>
+      
         <DisplayProfiles shows={shows} />
-      </div>
+      
     </>
   );
 };

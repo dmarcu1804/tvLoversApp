@@ -99,6 +99,7 @@ body{
     padding: 10px;
     font-size: 30px;
     text-align: left;
+    max-width:250px;
 }
 
 .individualShowDisplayed >h5 {
@@ -130,4 +131,38 @@ body{
 .showDetailText {
     display: flex;
     flex-direction: column;
+    max-width:900px;
+    padding:0 40px;
+    justify-content: center;
+}
+
+.showDetailText h1 {
+    font-size: 3rem;
+    padding:10px 0;
+    margin: 0 0;
+}
+
+.showDetailText small {
+    font-size:1.2rem;
+    text-transform: uppercase;
+}
+
+.showDetailText {
+    font-size:1.2rem;
+    margin: 0 0;
+}
+.ratingFormat{
+    margin:0 0;
+    font-size:1.2rem;
+    text-transform: uppercase;
+}
+.summaryFormat {
+    font-size: 2rem;
+    max-width:600px;
+    color: darkgrey;
+    margin:20px 0;
+}
+
+.starringFormat {
+    max-width:600px;
 }
