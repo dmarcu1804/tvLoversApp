@@ -47,6 +47,7 @@ body{
     display: flex;
     gap: 10px;
     width:100%;
+    flex-wrap: wrap;
 }
 /* 12em for 12 characters */
 .mainContent input{
@@ -92,6 +93,8 @@ body{
     margin: 10px auto; /* this centers the whole grid */
 }
 
+
+
 .individualShowDisplayed {
     /* background-color: #f1f1f1; */
     /* border: 1px solid black; */
@@ -101,6 +104,7 @@ body{
     text-align: left;
     max-width:250px;
 }
+
 
 .individualShowDisplayed >h5 {
     margin:0 auto;
@@ -114,6 +118,42 @@ body{
     /* margin:-40px; */
     font-size:0.9rem;
     color:rgb(116, 116, 116);
+}
+
+/* changes to 2 columns */
+@media only screen and (max-width:1200px) {
+    .showsDisplayed {grid-template-columns: repeat(2, 1fr)}    
+}
+
+/* changes to 1 column and centers items */
+@media only screen and (max-width:700px) {
+    .showsDisplayed {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+/* main content with search bar is aligned vertically and centered when screen gets smaller 
+   also ensures that the shows displayed and text is centered when screen gets smaller
+*/
+@media only screen and (max-width: 600px) {
+    .mainContent form{
+        flex-direction: column;
+        align-items:center;
+    }
+    .bottomContent {
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-items: center;
+    }
+
+    .bottomContent h1 {
+        font-size: 2rem;
+    }
+
+    .bottomContent p {
+        font-size: 1.2rem;
+    }
 }
 
 .fetchingShowDisplay {
@@ -134,6 +174,8 @@ body{
     max-width:900px;
     padding:0 40px;
     justify-content: center;
+    font-size:1.2rem;
+    margin: 0 0;
 }
 
 .showDetailText h1 {
@@ -147,10 +189,6 @@ body{
     text-transform: uppercase;
 }
 
-.showDetailText {
-    font-size:1.2rem;
-    margin: 0 0;
-}
 .ratingFormat{
     margin:0 0;
     font-size:1.2rem;
@@ -158,11 +196,54 @@ body{
 }
 .summaryFormat {
     font-size: 2rem;
-    max-width:600px;
+    max-width:70%; /* was 600px before */ 
+    width:100%;
+    word-wrap:break-word;
     color: darkgrey;
     margin:20px 0;
 }
 
 .starringFormat {
     max-width:600px;
+}
+
+@media only screen and (max-width: 800px) {
+    .fetchingShowDisplay {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fetchingShowDisplay img {
+        max-width: 100%;
+        height: auto;
+    }
+    .showDetailText {
+        max-width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size:1rem;
+    }
+
+    .summaryFormat,
+    .starringFormat {
+        max-width: 100%;
+        font-size:1.3rem;
+    }
+}
+/* added these 2 queries as the text overflows when resizing - this was a quick fix */
+@media only screen and (max-width:1200px) {
+
+    .summaryFormat {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .fetchingShowDisplay{
+        margin:20px;
+    }
+    .summaryFormat {
+        font-size: 1.4rem;
+    }
 }
