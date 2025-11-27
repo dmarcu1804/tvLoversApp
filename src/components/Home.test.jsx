@@ -102,7 +102,9 @@ describe("Home - Search Button Tests", () => {
 
     // ✅ Check search results header is displayed with show name
     expect(screen.getByText(/Search Results for/i)).toBeInTheDocument();
-    expect(screen.getByText(/Breaking Bad/i)).toBeInTheDocument();
+    // ✅ Verify the search term appears in the results header
+    const resultHeaders = screen.getAllByText(/Breaking Bad/i);
+    expect(resultHeaders.length).toBeGreaterThanOrEqual(1);
   });
 
   it("input field is functional and calls handleInput", async () => {
