@@ -1,0 +1,80 @@
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.backButton {
+  background-color: var(--color-gray-100);
+  border: 0;
+  color: var(--color-gray-800);
+  cursor: pointer;
+  display: inline-block;
+  margin: var(--spacing-16) 0;
+  padding: var(--spacing-8) var(--spacing-16);
+  &:hover {
+    background-color: var(--color-gray-200);
+  }
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  & p {
+    margin: 0;
+  }
+}
+
+.altShowCard {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  & h3,
+  & p {
+    margin: 0;
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+  }
+  & .altShowLink {
+    color: var(--color-blue-600);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.externalLinksIcon {
+  height: 40px;
+  width: 40px;
+}
+
+.episodeCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  & img {
+    display: block;
+    width: 100%;
+  }
+  & .episodeTitle {
+    font-size: var(--fs-14);
+    font-weight: var(--fw-500);
+    margin: 0;
+  }
+}
+
+.castContainer {
+  & .actorImage {
+    display: block;
+    width: 100%;
+  }
+  & .actorName {
+    font-size: var(--fs-14);
+    margin: 0;
+  }
+}

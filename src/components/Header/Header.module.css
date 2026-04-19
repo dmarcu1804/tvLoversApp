@@ -1,0 +1,36 @@
+.header {
+  background: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.logo {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-700);
+  color: var(--color-gray-light);
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-16);
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.navLink {
+  border-bottom: 5px solid transparent;
+  color: var(--color-gray-light);
+  padding: var(--spacing-12);
+  text-decoration: none;
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+  &:focus,
+  &:hover,
+  &:active {
+    border-color: var(--color-gray-0);
+  }
+}
