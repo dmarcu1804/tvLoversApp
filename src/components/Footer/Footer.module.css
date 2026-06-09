@@ -1,0 +1,38 @@
+.footer {
+  background-color: var(--dark-background);
+  border-top: 1px solid var(--color-gray-200);
+  color: var(--text-color);
+}
+
+.linksGroup {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-8);
+  flex-direction: column;
+  & .footerLinksHeader {
+    color: var(--color-gray-light);
+    font-family: var(--ff);
+    font-size: var(--fs-20);
+    font-weight: var(--fw-500);
+    margin-bottom: var(--spacing-12);
+  }
+  & .link {
+    color: var(--color-gray-light);
+    text-decoration: none;
+    &:link,
+    &:visited {
+      text-decoration: none;
+    }
+    &:focus,
+    &:hover,
+    &:active {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.footerText {
+  margin-top: var(--spacing-24);
+}

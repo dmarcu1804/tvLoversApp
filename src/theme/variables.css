@@ -1,0 +1,91 @@
+:root {
+  --color-primary: #235000;
+  --color-secondary: #6c757d;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  --color-gray-light: #f8f9fa;
+  --color-gray-dark: #343a40;
+  --color-gray-0: #ffffff;
+  --color-gray-100: #f8f9fa;
+  --color-gray-200: #e9ecef;
+  --color-gray-300: #dee2e6;
+  --color-gray-400: #ced4da;
+  --color-gray-500: #adb5bd;
+  --color-gray-600: #6c757d;
+  --color-gray-700: #495057;
+  --color-gray-800: #343a40;
+  --color-gray-900: #212529;
+
+  --light-background: #f0f0f0;
+  --dark-background: #343a40;
+
+  --ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --border-color: var(--color-gray-300);
+  --border-radius: 4px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+
+  --grid-gap: 16px;
+  --grid-sm-columns: 4;
+  --grid-md-columns: 8;
+  --grid-lg-columns: 12;
+  --grid-xl-columns: 12;
+  --grid-xxl-columns: 12;
+
+  --breakpoint-md: 550px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1024px;
+  --breakpoint-xxl: 1281px;
+
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+}
+
+html[data-theme="dark"] {
+  --color-primary: #375a7f;
+  --color-secondary: #444;
+  --color-success: #00bc8c;
+  --color-danger: #e74c3c;
+  --color-warning: #f39c12;
+  --color-info: #17a2b8;
+
+  --light-background: #343a40;
+  --dark-background: #f0f0f0;
+
+  --color-gray-light: #343a40;
+  --color-gray-dark: #f8f9fa;
+  --color-gray-0: #212529;
+  --color-gray-100: #343a40;
+  --color-gray-200: #495057;
+  --color-gray-300: #6c757d;
+  --color-gray-400: #adb5bd;
+  --color-gray-500: #ced4da;
+  --color-gray-600: #dee2e6;
+  --color-gray-700: #e9ecef;
+  --color-gray-800: #f8f9fa;
+  --color-gray-900: #ffffff;
+
+  --border-color: var(--color-gray-600);
+  --box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
