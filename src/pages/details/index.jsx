@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Layout } from '../layout';
+// import { Layout } from '../layout';
 import { Container, Grid, Item } from '../../components/Grid';
 import { getCast, getShowDetails } from '../../api';
 import { FiChevronLeft } from 'react-icons/fi';
@@ -28,7 +28,7 @@ export const Details = () => {
   }, [id]);
   console.log('cast', cast);
   return (
-    <Layout>
+    // <Layout>
       <Container className={'mainContent'}>
         <FiChevronLeft
           onClick={() => window.history.back()}
@@ -119,6 +119,6 @@ export const Details = () => {
           </>
         )}
       </Container>
-    </Layout>
+    // </Layout>
   );
 };

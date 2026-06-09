@@ -1,4 +1,4 @@
-import styles from "./Searchbar.module.css";
+import styles from "./SearchBar.module.css";
 import { useStore } from "../../store";
 import { useEffect } from "react";
 import { getSearchedShows, getShows } from "../../api";
@@ -32,6 +32,7 @@ export const Searchbar = () => {
       setShows(data);
     });
   }, [, query]);
+
 
   return (
     <div className={styles.searchBar}>

@@ -82,7 +82,8 @@ import { Shows } from "./pages/shows";
 import { StoreProvider } from "./store/provider";
 import "./theme/variables.css";
 import "./App.css";
-
+import { Basket } from "./components/Basket";
+import { Layout as LayoutProvider } from "./pages/layout"
 const router = createBrowserRouter([
   {
     path: "/",
@@ -101,8 +102,12 @@ const router = createBrowserRouter([
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <StoreProvider>
-      <RouterProvider router={router} />
-    </StoreProvider>
+    <LayoutProvider>
+      <StoreProvider>
+        <div className="main-grid">
+          <RouterProvider router={router} />
+        </div>
+      </StoreProvider>
+    </LayoutProvider>
   </StrictMode>,
 );
