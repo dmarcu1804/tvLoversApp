@@ -1,14 +1,20 @@
 import { Card } from '../../components/Card';
 import { Searchbar } from '../../components/Searchbar';
 import { Grid, Item } from '../../components/Grid';
-import { Layout } from '../layout';
+//import { Layout } from '../layout';
 import { useStore } from '../../store';
 
 export const Home = () => {
   const { query, shows } = useStore();
+  function dragstartHandler(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
 
+  function dragoverHandler(ev) {
+    ev.preventDefault();
+  }
   return (
-    <Layout>
+    // <Layout>
       <Grid>
         <Item xxlSpan={12} xlSpan={12} lgSpan={12} mdSpan={8} smSpan={4}>
           <div className={'mainContent'}>
@@ -17,7 +23,7 @@ export const Home = () => {
             {query.length > 0 && <p>Search results for "{query}"</p>}
             <Grid>
               {shows.map((card) => (
-                <Item
+                <Item draggable ondragstart={() => dragstartHandler(event)}
                   key={card.id}
                   xxlSpan={2}
                   xlSpan={2}
@@ -32,6 +38,6 @@ export const Home = () => {
           </div>
         </Item>
       </Grid>
-    </Layout>
+    // </Layout>
   );
 };

@@ -1,0 +1,6 @@
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: solid 2px black;
+}
+
